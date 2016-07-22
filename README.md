@@ -77,7 +77,7 @@ Mount the keystore that you want to add/update to /keystore.
             -v /path/to/keystore:/keystore \
             viyh/autocert \
             autocert-update-java-keystore \
-                --domain ntp.disconformity.net \
+                --domain test.uberboxen.net \
                 --alias cert_alias \
                 --passphrase changeit
 
