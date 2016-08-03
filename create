@@ -11,7 +11,7 @@ while [ $# -gt 0 ]; do
             shift 2
     ;;
         -e | --email)
-            CERT_EMAIL=$2
+            email=$2
             shift 2
     ;;
         *)
@@ -25,13 +25,12 @@ if [ -z ${domains+x} ]; then
     exit 1
 fi
 
-echo "DOMAINS: $domains"
-echo "EMAIL: $email"
-
 DOMAIN_ARR=($(echo ${domains}))
 
 if [[ $email == "" ]]; then
     CERT_EMAIL=admin\@${DOMAIN_ARR[0]}
+else
+    CERT_EMAIL=$email
 fi
 echo "Using $CERT_EMAIL as the admin email address."
 
